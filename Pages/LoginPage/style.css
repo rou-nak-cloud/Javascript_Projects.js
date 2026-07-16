@@ -1,0 +1,335 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* page Container */
+.page-container {
+  display: grid;
+  grid-template-columns: 40vw 60vw;
+  min-height: 100vh;
+}
+
+/* Left column */
+.auth-column {
+  background-color: #0b0b0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+}
+.form-wrapper {
+  width: 100%;
+  max-width: 380px;
+}
+.form-wrapper h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 35px;
+  letter-spacing: -0.5px;
+
+  background: linear-gradient(
+    135deg,
+    rgb(240, 250, 254) 0%,
+    rgb(68, 138, 252) 100%
+  );
+
+  /* Clip the background to the boundaries of the text letters */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Make the original text color transparent so the background shows through */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.input-group {
+  margin: 20px 0;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  color: #88888883;
+  border-radius: 50%;
+  font-size: 1.1rem;
+}
+.input-wrapper input {
+  width: 100%;
+  padding: 16px 16px 16px 48px;
+  background-color: #0f1012;
+  border: 1px solid #22252a;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.15);
+  transition: all 0.3s ease;
+}
+.input-wrapper input:focus {
+  border-color: #3b82f6;
+  background-color: #131518;
+  box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.15);
+}
+/* input inside the wrapper is focused, target the icon */
+.input-wrapper:focus-within .input-icon {
+  color: #3b82f6;
+  box-shadow: 0 0 0 10px rgba(19, 99, 229, 0.135);
+  border-radius: 50%;
+}
+
+/* forget links */
+.forgot-link {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #666;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 30px;
+  transition: color 0.2s;
+}
+.forgot-link:hover {
+  color: #888;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #2b4cff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  cursor: pointer;
+  letter-spacing: 1.3px;
+  transition:
+    background-color 0.3s,
+    transform 0.1s;
+}
+.submit-btn:hover {
+  background-color: #1e3ecc;
+}
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+.toggle-text {
+  position: absolute;
+  bottom: 40px;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.toggle-text a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.toggle-text a:hover {
+  text-decoration: underline;
+}
+
+/* Right Column Media */
+.media-column {
+  position: relative;
+  background-image:
+    linear-gradient(to right, rgba(11, 11, 11, 0.9), rgba(0, 0, 0, 0.3)),
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"); /* Modern structural real estate background */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+
+  transition: background-image 0.8s ease-in-out;
+}
+
+.media-overlay-content {
+  max-width: 400px;
+  margin-top: 3rem;
+  margin-bottom: 20px;
+}
+
+.media-overlay-content h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #eaeaeaa6;
+  margin-bottom: 24px;
+}
+.learn-more {
+  font-size: 0.8rem;
+  color: #ffffff4d;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #ffffff59;
+  padding-bottom: 4px;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.learn-more:hover {
+  color: #cccccc72;
+  border-color: #cccccc8e;
+}
+
+/* Bottom Actions (Slider line & Arrows) */
+.media-bottom-content {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.slider-indicator {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.slider-indicator .line {
+  width: 60px;
+  height: 2px;
+  background-color: #444;
+}
+
+.slider-indicator .line.active {
+  background-color: #ffffff9c;
+}
+.slider-arrows {
+  display: flex;
+  gap: 16px;
+  padding-top: 6px;
+  margin-right: 12px;
+}
+
+.arrow-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.arrow-btn:hover {
+  color: #ffffff9c;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.toast-container {
+  position: relative;
+
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none; /* Allows clicking through the container background */
+}
+.toast {
+  background-color: #131518;
+  color: #fff;
+  padding: 16px 28px;
+  border-radius: 12px;
+  border: 1px solid #22252a;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(59, 130, 246, 0.1);
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: auto; /* Re-enables clicking on the toast itself */
+
+  /* Smooth slide-up animation */
+  animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+/* Accent highlight bar on the left side of the toast */
+.toast::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #3b82f6;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+/* Exit animation state */
+.toast.fade-out {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0) scale(0.95);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .page-container {
+    grid-template-columns: 100%;
+    grid-template-rows: auto 400px;
+  }
+  .auth-column {
+    padding: 60px 20px;
+  }
+  .media-column {
+    padding: 40px 20px;
+  }
+  .toggle-text {
+    position: absolute;
+    top: 30rem;
+  }
+}

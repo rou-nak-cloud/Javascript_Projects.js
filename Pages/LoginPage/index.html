@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/cc69542d82.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script defer type="module" src="script.js"></script>
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- Left Column AUTH -->
+      <div class="auth-column">
+        <!-- Form Content -->
+        <div class="form-wrapper">
+          <h1 id="form-title">Sign In</h1>
+
+          <form action="#" id="auth-form">
+            <!-- User Input -->
+            <div class="input-group">
+              <label for="username">User Name</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-envelope input-icon icon-blue"></i>
+                <input
+                  type="text"
+                  id="username"
+                  placeholder="Enter User Name"
+                  required
+                />
+              </div>
+            </div>
+            <!-- NEW: Email Input Group (Starts hidden because we default to Sign In) -->
+            <div class="input-group hidden" id="email-group">
+              <label for="email">Email Address</label>
+              <div class="input-wrapper">
+                <i class="fa-regular fa-envelope input-icon"></i>
+                <input type="email" id="email" placeholder="Enter Your Email" />
+              </div>
+            </div>
+            <!-- Password group -->
+            <div class="input-group">
+              <label for="password">Password</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-unlock-keyhole input-icon icon-blue"></i>
+                <input
+                  type="text"
+                  id="password"
+                  placeholder="Enter Password"
+                  required
+                />
+              </div>
+            </div>
+
+            <a href="#" class="forgot-link">Forget Password?</a>
+            <button type="submit" class="submit-btn" id="submit-btn">
+              Sign In
+            </button>
+          </form>
+
+          <!-- Toggle Link -->
+          <div class="toggle-container">
+            <p class="toggle-text" id="toggle-to-signup">
+              Don't have an account?
+              <a href="#" class="toggle-auth-trigger">Sign up</a>
+            </p>
+            <p class="toggle-text hidden" id="toggle-to-signin">
+              Already have an account?
+              <a href="#" class="toggle-auth-trigger">Sign in</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column Images -->
+      <div class="media-column">
+        <!-- Overlay Hero Text -->
+        <div class="media-overlay-content">
+          <h2>A new way to experience the infinite virtual space.</h2>
+          <a href="#" class="learn-more">LEARN MORE</a>
+        </div>
+        <!-- media bottom -->
+        <div class="media-bottom-content">
+          <div class="slider-indicator">
+            <span class="line active" data-index="0"></span>
+            <span class="line" data-index="1"></span>
+            <span class="line" data-index="2"></span>
+          </div>
+          <!-- <div class="slider-arrows">
+            <button type="button" class="arrow-btn">
+              <i class="fa-solid fa-chevron-left"></i>Left
+            </button>
+            <button type="button" class="arrow-btn">
+              Right
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+  </body>
+</html>
